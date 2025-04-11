@@ -1,0 +1,54 @@
+
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Picture Frame Generator</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1>Profile Picture Frame Generator 3</h1>
+
+    <div class="controls">
+      <div class="control-group">
+        <label for="imageLoader">1. Upload Your Picture:</label>
+        <input type="file" id="imageLoader" name="imageLoader" accept="image/*">
+      </div>
+
+      <div class="control-group">
+        <label>2. Choose a Frame:</label>
+        <div id="frameSelector" class="frame-selector"><div class="frame-option" data-frame-src="frames/frame1.png" style="background-image: url(&quot;frames/frame1.png&quot;);"></div><div class="frame-option" data-frame-src="frames/frame2.png" style="background-image: url(&quot;frames/frame2.png&quot;);"></div><div class="frame-option" data-frame-src="frames/frame3.png" style="background-image: url(&quot;frames/frame3.png&quot;);"></div></div>
+      </div>
+    </div>
+
+    <div class="preview-area">
+      <h2>Preview</h2>
+      <canvas id="imageCanvas" width="400" height="400"></canvas>
+      <p id="instructions" style="display: block;">Upload an image and select a frame to see the preview.</p>
+    </div>
+
+    <div class="download-area">
+      <button id="downloadButton" disabled="">Download Profile Picture</button>
+    </div>
+  </div>
+
+  <div id="cropModal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <span class="close-button">×</span>
+      <h2>Adjust Your Image</h2>
+      <div>
+        <img id="cropperImage" style="max-width: 100%;">
+      </div>
+      <div class="modal-actions">
+        <button id="rotateButton">Rotate</button>
+        <button id="cropConfirmButton">Crop &amp; Continue</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
